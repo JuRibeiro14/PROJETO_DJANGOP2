@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contato{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="padding-bottom: 50px;">
+    <h1 class="text-center mb-4">Fale Conosco</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" class="needs-validation">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" class="form-control" placeholder="Digite sua mensagem" required></textarea>
+                </div>
+                <button type="submit" class="nav-buttom mt-3 w-100">Enviar</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 mt-4">
+            <h3>Outros Meios de Contato</h3>
+            <p><strong>Email:</strong> digitalize@gmail.com</p>
+            <p><strong>Telefone:</strong> (11) 1234-5678</p>
+            <p><strong>Endereço:</strong> Rua Paris, 123 - São Paulo, SP</p>
+            <h4>Redes Sociais</h4>
+            <p>
+                <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-primary btn-sm mr-2">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-danger btn-sm mr-2">Instagram</a>
+                <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-info btn-sm">Twitter</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
